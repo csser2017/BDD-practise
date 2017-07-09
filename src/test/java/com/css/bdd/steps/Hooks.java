@@ -15,19 +15,20 @@ import cucumber.api.java.After;
 import cucumber.api.java.Before;
 
 //Only browser, ios, android are available 
-@ActiveProfiles(profiles = "browser")
+
 public class Hooks {
 
-	BrowserDriver driver = new BrowserDriver();
+	public static IDriver driver =new BrowserDriver();
 
 	@Before
-	public void setUp() {
+	public void setUp()  throws Throwable{
 		System.out.println("I am set up!!");
 		try {
 			this.driver.createNewDriverInstance();
 		} catch (ExecutionException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			this.driver.createNewDriverInstance();
 		}
 	}
 
