@@ -28,5 +28,6 @@ public interface IDriver {
 	void get(final String url);
 	
 	 void switchToFrame(final UIElement element);
+	 void elementTextClean(final UIElement element);
 	
 }

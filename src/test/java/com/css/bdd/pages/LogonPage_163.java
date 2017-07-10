@@ -22,11 +22,11 @@ public class LogonPage_163 {
 	public void openLognPage() {
 		this.driver.get("https://mail.qq.com");
 		switchFrame();
+		this.driver.elementTextClean(username);
 	}
 	public void switchFrame() {
 		this.driver.switchToFrame(logonFrame);
 	}
-	
 	
 	public void setUserName(final String name) {
 		this.driver.elementSendText(username, name);

@@ -101,6 +101,7 @@ public class BrowserDriver implements IDriver {
 		this.driver.get(url);
 
 	}
+
 	protected By getBy(final String param) {
 		if(param !=null && (param.startsWith("/") || param.startsWith("(/") || param.startsWith("./"))) {
 			return By.xpath(param);
@@ -139,6 +140,10 @@ public class BrowserDriver implements IDriver {
     	By by = getBy(element.locator);
         this.driver.findElement(by).click();
     }
+	public void elementTextClean(final UIElement element ) {
+		By by = getBy(element.locator);
+		this.driver.findElement(by).clear();
+	}
 	
 	public boolean IsElementFound(final UIElement element) {
 		By by = getBy(element.locator);

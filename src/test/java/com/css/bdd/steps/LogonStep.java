@@ -25,8 +25,8 @@ public class LogonStep {
 	}
 
 	@Then("^I should see below welcome message on the mailbox$")
-	public void i_should_see_below_welcome_message_on_the_mailbox(DataTable arg1) throws Throwable {
-
+	public void i_should_see_below_welcome_message_on_the_mailbox(List<Map<String,String>> userinfo) throws Throwable {
+         logonFlow.verifyLogonInfo(userinfo.get(0).get("msg"));
 	}
 
 

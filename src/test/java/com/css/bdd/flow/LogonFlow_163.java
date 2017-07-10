@@ -2,9 +2,12 @@ package com.css.bdd.flow;
 
 import com.css.bdd.pages.LandingPage_163;
 import com.css.bdd.pages.LogonPage_163;
-import org.hamcrest.core.IsEqual.
-import org.hamcrest.MatcherAssert.*;
-import org.hamcrest.Matcher;
+
+import org.hamcrest.MatcherAssert;
+import org.hamcrest.core.Is;
+import org.hamcrest.core.IsEqual.*;
+import static org.junit.Assert.assertEquals;
+
 
 public class LogonFlow_163 {
 	
@@ -22,7 +25,9 @@ public class LogonFlow_163 {
 	}
 	
 	public void verifyLogonInfo(String expInfo) {
-		assertThat(expInfo,is(equalTo(landingPage.getLogonInfo())));
+		//assertThat(expInfo,is(equalTo(landingPage.getLogonInfo()));
+		// assertThat("cheese", is(equalTo("smelly")));
+		 assertEquals(expInfo,landingPage.getLogonInfo());
 	}
 
 }
